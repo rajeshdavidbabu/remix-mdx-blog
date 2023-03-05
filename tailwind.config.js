@@ -1,20 +1,14 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}"],
+  content: ["./app/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {
-              color: "#3182ce",
-              "&:hover": {
-                color: "#2c5282",
-              },
-            },
-          },
-        },
-      },
+    extend: {},
+    fontFamily: {
+      serif: ['Merriweather", "serif'],
+      sans: ['Fira Sans', 'sans-serif'],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -7,15 +7,16 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "./styles/app.css";
 
-export function links() {
-  return [{ rel: "stylesheet", href: styles }];
-}
+import stylesheet from "~/tailwind.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Rajesh David Babu",
+  title: "New Remix App",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -27,7 +28,6 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div>I am seein in all views</div>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
