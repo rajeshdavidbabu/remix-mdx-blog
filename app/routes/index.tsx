@@ -2,9 +2,9 @@ import Header from "~/components/Header";
 
 export default function Index() {
   return (
-    <div className="bg-background">
+    <div className="bg-background dark:bg-d-background">
       <Header />
-      <article className="prose lg:prose-xl">
+      <article className="prose text-text-primary lg:prose-xl dark:text-d-text-primary">
         <h1 className="text-6xl font-bold text-red-700">
           Garlic bread with cheese: What the science tells us
         </h1>

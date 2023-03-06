@@ -66,9 +66,9 @@
     @apply bg-primary;
   }
   .theme-toggle .checked {
-    @apply text-text-main opacity-100;
+    @apply text-text-primary opacity-100 dark:text-d-text-primary;
   }
   .theme-toggle .checked svg {
-    fill: var(--text-main);
+    @apply fill-text-primary dark:fill-d-text-primary;
   }
 }
