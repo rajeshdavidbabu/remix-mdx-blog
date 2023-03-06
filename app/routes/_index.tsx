@@ -2,7 +2,7 @@ import Header from "~/components/Header";
 
 export default function Index() {
   return (
-    <>
+    <div className="bg-background">
       <Header />
       <article className="prose lg:prose-xl">
         <h1 className="text-6xl font-bold text-red-700">
@@ -19,6 +19,6 @@ export default function Index() {
           to a series of rabies cases springing up around the country.
         </p>
       </article>
-    </>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ const Nav = () => {
   const activeClassName = "selected navlink";
 
   return (
-    <nav className="flex flex-[1] items-center justify-end font-sans font-bold uppercase">
+    <nav className="flex flex-[1] items-center justify-end font-sans font-bold uppercase text-text-main">
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? activeClassName : "navlink")}

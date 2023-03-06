@@ -9,8 +9,13 @@ import {
 } from "@remix-run/react";
 
 import stylesheet from "~/styles/tailwind.css";
+import dark from "~/styles/dark.css";
 
 export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: dark,
+  },
   { rel: "stylesheet", href: stylesheet },
 ];
 
