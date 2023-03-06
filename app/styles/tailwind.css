@@ -57,7 +57,7 @@
   }
   .navlink:hover::before,
   .selected::before {
-    @apply scale-x-100;
+    @apply md:scale-x-100;
   }
   .navlink:hover:not(.selected) {
     @apply text-primary;
@@ -65,10 +65,10 @@
   .selected::before {
     @apply bg-primary;
   }
-  .theme-toggle > label:focus-within {
-    @apply shadow-[0_0_0_0.08em_white,0_0_0_0.12em_white] outline-none;
-  }
   .theme-toggle .checked {
     @apply text-text-main opacity-100;
+  }
+  .theme-toggle .checked svg {
+    fill: var(--text-main);
   }
 }

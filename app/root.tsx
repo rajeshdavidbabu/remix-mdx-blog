@@ -9,12 +9,12 @@ import {
 } from "@remix-run/react";
 
 import stylesheet from "~/styles/tailwind.css";
-import dark from "~/styles/dark.css";
+import light from "~/styles/light.css";
 
 export const links: LinksFunction = () => [
   {
     rel: "stylesheet",
-    href: dark,
+    href: light,
   },
   { rel: "stylesheet", href: stylesheet },
 ];

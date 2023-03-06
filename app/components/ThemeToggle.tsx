@@ -1,10 +1,29 @@
 import { useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
-const icons = [<Sun key="1" />, <Moon key="2" />];
+const iconThemeMap = new Map([
+  ["light", Sun],
+  ["dark", Moon],
+]);
+const themes = [...iconThemeMap.keys()];
+
+interface ThemeToggleIconProps {
+  theme: string;
+  checked: boolean;
+}
+
+const ThemeToggleIcon = ({ theme, checked }: ThemeToggleIconProps) => {
+  const Component = iconThemeMap.get(theme);
+  console.log(theme, checked);
+
+  if (Component) {
+    return <Component key={theme} className={checked ? "checked" : ""} />;
+  }
+
+  return <></>;
+};
 
 export const ThemeToggle = () => {
-  const themes = ["light", "dark"];
   const [theme, setTheme] = useState("");
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -23,7 +42,7 @@ export const ThemeToggle = () => {
           key={t}
           className={theme === t ? `checked ${labelClass}` : labelClass}
         >
-          {icons[i]}
+          <ThemeToggleIcon theme={t} checked={theme === t} />
           <input
             type="radio"
             name="theme-toggle"
