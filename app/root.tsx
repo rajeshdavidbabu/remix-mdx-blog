@@ -22,6 +22,7 @@ import {
 } from "~/utils/theme-provider";
 import { getThemeSession } from "./utils/theme.server";
 import Header from "~/components/Header";
+import Footer from "~/components/Footer";
 
 import stylesheet from "~/styles/tailwind.css";
 
@@ -62,8 +63,13 @@ function App() {
         <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
       <body className="bg-background dark:bg-d-background">
-        <Header />
-        <Outlet />
+        <div className="flex h-screen min-h-screen flex-col">
+          <Header />
+          <main className="relative mx-auto my-0 box-border flex w-full max-w-7xl flex-[1] flex-grow flex-col py-[1em] px-[2em]">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

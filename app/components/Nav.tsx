@@ -53,7 +53,7 @@ const Nav = () => {
         </div>
       </nav>
       {isOpen && (
-        <div className="basis-full md:hidden">
+        <div className="mt-4 basis-full md:hidden">
           <NavLinks />
         </div>
       )}

@@ -17,7 +17,7 @@ export const ThemeToggle = () => {
 
   return (
     <div className="theme-toggle ml-2.5 inline-flex h-full items-center gap-[0.6em] rounded-[99em] px-[0.67em] py-[0.33em] pt-2">
-      {themes.map((t, i) => (
+      {themes.map((t) => (
         <label
           key={t}
           className={theme === t ? `checked ${labelClass}` : labelClass}

@@ -2,9 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --background-body: #fff;
+  --text-main: #36393b;
+  --text-secondary: #6b6f72;
+  --primary-color: #548e9b;
+  --dark-background-body: #202122;
+  --dark-text-main: #fff;
+  --dark-text-secondary: #ccc;
+}
+
+::selection {
+  background-color: var(--primary-color); /* Primary color */
+  color: var(--text-main); /* Primary light mode text color */
+}
+
 @layer base {
   html {
     font-family: Merriweather, serif;
+  }
+
+  a {
+    color: inherit;
+    transition: color linear 0.15s;
+  }
+
+  a:hover {
+    color: var(--primary-color);
+  }
+
+  p a {
+    text-decoration: none;
+    box-shadow: inset 0 -0.12em 0 var(--primary-color);
+    -webkit-transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+
+  p a:hover {
+    box-shadow: inset 0 -1.5em 0 var(--primary-color);
+    color: #fff;
   }
 
   /* latin */
