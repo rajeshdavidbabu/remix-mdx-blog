@@ -1,4 +1,4 @@
-export default function Index() {
+export default function Blog() {
   return (
     <div>
       <article className="prose text-text-primary lg:prose-xl dark:text-d-text-primary">

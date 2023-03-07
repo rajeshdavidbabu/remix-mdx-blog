@@ -21,6 +21,7 @@ import {
   useTheme,
 } from "~/utils/theme-provider";
 import { getThemeSession } from "./utils/theme.server";
+import Header from "~/components/Header";
 
 import stylesheet from "~/styles/tailwind.css";
 
@@ -60,7 +61,8 @@ function App() {
         <Links />
         <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
-      <body>
+      <body className="bg-background dark:bg-d-background">
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
