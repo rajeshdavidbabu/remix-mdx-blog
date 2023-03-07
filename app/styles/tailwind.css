@@ -47,23 +47,10 @@
 
 @layer components {
   .navlink {
-    @apply relative ml-5 block min-w-[70px] px-[5px] py-2.5 text-center text-inherit no-underline before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-full before:scale-x-0 before:transition-transform before:duration-[0.3s] before:ease-[ease] before:content-[''];
-  }
-  .navlink:not(.selected) {
-    @apply opacity-70;
-  }
-  .navlink::before {
-    @apply bg-text-secondary;
-  }
-  .navlink:hover::before,
-  .selected::before {
-    @apply md:scale-x-100;
-  }
-  .navlink:hover:not(.selected) {
-    @apply text-primary;
+    @apply relative ml-5 block min-w-[70px] px-[5px] py-2.5 text-center text-inherit no-underline before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-full before:scale-x-0 before:bg-text-secondary before:transition-transform before:duration-[0.3s] before:ease-[ease] before:content-[''] hover:before:md:scale-x-100 [&:not(.selected)]:opacity-70 hover:[&:not(.selected)]:text-primary;
   }
   .selected::before {
-    @apply bg-primary;
+    @apply bg-primary md:scale-x-100;
   }
   .theme-toggle .checked {
     @apply text-text-primary opacity-100 dark:text-d-text-primary;
