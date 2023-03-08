@@ -13,10 +13,14 @@ export interface ThemeToggleIconProps {
 
 export const ThemeToggleIcon = ({ theme, checked }: ThemeToggleIconProps) => {
   const Component = iconThemeMap.get(theme);
-  console.log(theme, checked);
 
   if (Component) {
-    return <Component key={theme} className={checked ? "checked" : ""} />;
+    return (
+      <Component
+        key={theme}
+        className={checked ? "fill-text-primary dark:fill-d-text-primary" : ""}
+      />
+    );
   }
 
   return <></>;
