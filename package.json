@@ -8,12 +8,14 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@mdx-js/react": "^2.3.0",
     "@remix-run/node": "*",
     "@remix-run/react": "*",
     "@remix-run/serve": "*",
     "clsx": "^1.2.1",
     "isbot": "^3.6.5",
     "lucide-react": "^0.123.0",
+    "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-highlight": "^6.0.0"

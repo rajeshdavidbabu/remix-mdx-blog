@@ -77,7 +77,7 @@
     transition: color linear 0.15s;
   }
 
-  a:hover {
+  a::not(.selected):hover {
     color: var(--primary-color);
   }
 

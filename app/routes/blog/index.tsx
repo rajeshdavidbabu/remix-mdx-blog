@@ -1,40 +1,21 @@
-import styles from "highlight.js/styles/github-dark-dimmed.css";
-import type { LinksFunction, LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
-import * as helloWorld from "./__data/hello-world.mdx";
-import * as markDownTest from "./__data/markdown-test.mdx";
-import * as codeSplittingLocales from "./__data/code-splitting-i18n.mdx";
+import type { BlogList } from "~/data/blogList.server";
+import { blogList } from "~/data/blogList.server";
 
-function postFromModule(mod: any) {
-  console.log("incoming module ", mod);
-
-  return {
-    slug: mod.filename.replace(/\.mdx?$/, ""),
-    ...mod.attributes.meta,
-  };
-}
-
-export const loader: LoaderFunction = () => {
-  return [
-    postFromModule(helloWorld),
-    postFromModule(markDownTest),
-    postFromModule(codeSplittingLocales),
-  ];
-};
-
-export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
+export const loader: LoaderFunction = async () => {
+  return blogList;
 };
 
 export default function Blog() {
-  const posts = useLoaderData();
+  const posts = useLoaderData<BlogList[]>();
 
   return (
     <div className="mx-auto my-0 w-full max-w-[42em] text-text-primary dark:text-d-text-primary">
       <h1 className="mb-20 text-2xl font-bold leading-[1.3] md:text-4xl">
         Blog
       </h1>
-      {posts.map((post: any, index: number) => {
+      {posts.map((post, index) => {
         return (
           <div key={index}>
             {index !== 0 && <hr className="mx-auto my-[60px]" />}
