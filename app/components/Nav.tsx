@@ -16,13 +16,6 @@ const NavLinks = () => {
       </NavLink>
 
       <NavLink
-        to="/about"
-        className={({ isActive }) => (isActive ? activeClassName : "navlink")}
-      >
-        About
-      </NavLink>
-
-      <NavLink
         to="/blog"
         className={({ isActive }) => (isActive ? activeClassName : "navlink")}
       >

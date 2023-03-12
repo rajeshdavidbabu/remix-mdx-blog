@@ -1,6 +1,6 @@
 export default function Index() {
   return (
-    <div className="mx-0 my-[2em] flex min-h-[400px] flex-[1] items-center justify-center text-text-primary dark:text-d-text-primary max-w-md:flex-col">
+    <div className="mx-0 my-[2em] flex min-h-[400px] flex-[1] items-center justify-center max-w-md:flex-col">
       <div className="max-w-md:flex-[0 flex-[1] px-[1em] py-0 max-w-md:pb-[2em] max-w-md:text-center">
         <h1 className="mb-[0.5em] text-2xl font-bold leading-[1.3] md:text-4xl">
           Welcome to your new Remix Blog
