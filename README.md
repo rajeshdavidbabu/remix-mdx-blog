@@ -4,6 +4,8 @@ A minimal remix blog built with the power of MDX and tailwindcss.
 
 ![Screenshot](screenshot.png)
 
+## 👉 Check out the ✨ [Live Demo](https://remix-mdx-blog-ten.vercel.app/) ✨
+
 ## 👩‍🚀 Description
 
 Built with the Remix 1.14.0 and consists of:

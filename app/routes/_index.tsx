@@ -6,7 +6,7 @@ export default function Index() {
           Welcome to your new Remix Blog
         </h1>
         <p className="text-lg md:text-xl">
-          Check out the docs on{" "}
+          Check out the codebase on{" "}
           <a
             href="https://github.com/rajeshbabu-oviva/remix-mdx-blog"
             target="_blank"
