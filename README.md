@@ -1,24 +1,30 @@
-# Tailwindcss Example
+# Remix MDX Blog 🚀
 
-Integrate Remix with tailwindcss.
+A minimal remix blog built with the power of MDX and tailwindcss.
 
-## Preview
+[![Screenshot](screenshot.png)]
 
-Open this example on [CodeSandbox](https://codesandbox.io/s/remix-tailwind-2x8pg):
+## 👩‍🚀 Description
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/remix-run/examples/tree/main/tailwindcss)
+Built with the Remix 1.14.0 and consists of:
 
-## Example
+- ✅ React 18
+- ✅ Dark Mode with persistent theme-switching
+- ✅ Remix route convention v2
+- ✅ MDX files as their own routes (for code-splitting)
+- ✅ Tailwindcss via Remix config
 
-This example shows how to use Tailwind CSS (v3.0) with Remix. It follows the steps outlined in the official [Remix Styling docs](https://remix.run/guides/styling#tailwind).
+## 🧞 Commands
 
-Relevant files:
+All commands are run from the root of the project, from a terminal:
 
-- [package.json](./package.json) where the tailwind CLI is used.
-- [tailwind.config.js](./tailwind.config.js) where tailwind is configured.
-- [app/root.tsx](./app/root.tsx) where tailwind is imported.
-- [.gitignore](.gitignore) where the generated tailwind.css is added to the ignore list.
+| Command         | Action                                      |
+| :-------------- | :------------------------------------------ |
+| `npm install`   | Installs dependencies                       |
+| `npm run dev`   | Starts local dev server at `localhost:3000` |
+| `npm run build` | Build your production site to `./build/`    |
 
-## Related Links
+## Contributing
 
-[Tailwind CSS](https://tailwindcss.com)
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
