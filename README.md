@@ -2,7 +2,7 @@
 
 A minimal remix blog built with the power of MDX and tailwindcss.
 
-[![Screenshot](screenshot.png)]
+![Screenshot](screenshot.png)
 
 ## 👩‍🚀 Description
 
