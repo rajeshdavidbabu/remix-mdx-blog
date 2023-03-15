@@ -13,6 +13,7 @@ Built with the Remix 1.14.0 and consists of:
 - ✅ Remix route convention v2
 - ✅ MDX files as their own routes (for code-splitting)
 - ✅ Tailwindcss via Remix config
+- ✅ Fully-responsive
 
 ## 🧞 Commands
 
