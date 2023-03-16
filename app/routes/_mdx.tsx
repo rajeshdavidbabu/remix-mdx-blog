@@ -35,7 +35,7 @@ export default function BlogLayout() {
       )}
 
       <div className="flex justify-center">
-        <div className="prose w-screen py-10 px-10 dark:prose-invert md:prose-lg lg:prose-xl prose-headings:text-text-primary prose-a:no-underline prose-pre:p-0 dark:prose-headings:text-d-text-primary">
+        <div className="prose w-screen py-[1em] px-[2em] dark:prose-invert md:prose-lg lg:prose-xl prose-headings:text-text-primary prose-a:no-underline prose-pre:p-0 dark:prose-headings:text-d-text-primary">
           <Outlet />
         </div>
       </div>
