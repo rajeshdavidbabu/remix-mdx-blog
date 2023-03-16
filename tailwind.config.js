@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   darkMode: "class",
@@ -16,6 +17,7 @@ module.exports = {
         "d-text-primary": "var(--dark-text-main)",
         "d-text-secondary": "var(--dark-text-secondary)",
         primary: "var(--primary-color)",
+        gray: colors.gray,
       },
       screens: {
         "max-w-2xl": { max: "1535px" },
