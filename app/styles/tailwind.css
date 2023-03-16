@@ -83,7 +83,8 @@
   }
 
   h2 a,
-  p a {
+  p a,
+  footer a {
     text-decoration: none;
     box-shadow: inset 0 -0.12em 0 var(--primary-color);
     -webkit-transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -91,7 +92,8 @@
   }
 
   h2 a:hover,
-  p a:hover {
+  p a:hover,
+  footer a:hover {
     box-shadow: inset 0 -1.5em 0 var(--primary-color);
     color: var(--text-main);
   }
