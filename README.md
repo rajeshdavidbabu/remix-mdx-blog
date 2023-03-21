@@ -16,6 +16,7 @@ Built with the Remix 1.14.0 and consists of:
 - ✅ MDX files as their own routes (for code-splitting)
 - ✅ Tailwindcss via Remix config
 - ✅ Fully-responsive
+- ✅ With Stagger animations from Framer-motion
 
 ## 🧞 Commands
 
