@@ -1,10 +1,11 @@
 import type { LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import type { BlogList } from "~/data/blogList.server";
 import { blogList } from "~/data/blogList.server";
 
 export const loader: LoaderFunction = async () => {
-  return blogList;
+  return json(blogList);
 };
 
 export default function Blog() {
@@ -21,7 +22,9 @@ export default function Blog() {
             {index !== 0 && <hr className="mx-auto my-[60px]" />}
 
             <h2 className=" mb-4 mt-6 font-sans text-xl font-bold leading-[1.3] md:text-3xl">
-              <Link to={post.slug}>{post.title}</Link>
+              <Link prefetch="intent" to={post.slug}>
+                {post.title}
+              </Link>
             </h2>
             <p className="my-6 md:text-lg">{post.description}</p>
             <div className="font-sans font-bold">

@@ -13,16 +13,19 @@
     "@remix-run/react": "*",
     "@remix-run/serve": "*",
     "clsx": "^1.2.1",
+    "etag": "^1.8.1",
     "isbot": "^3.6.5",
     "lucide-react": "^0.123.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rehype-highlight": "^6.0.0"
+    "rehype-highlight": "^6.0.0",
+    "remix-utils": "^6.0.0"
   },
   "devDependencies": {
     "@remix-run/dev": "*",
     "@remix-run/eslint-config": "*",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/etag": "^1.8.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "autoprefixer": "^10.4.13",

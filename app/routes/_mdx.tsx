@@ -1,11 +1,17 @@
 import styles from "highlight.js/styles/github-dark-dimmed.css";
 import type { LinksFunction, LoaderFunction } from "@remix-run/node";
-import { Outlet, useLoaderData, useLocation } from "@remix-run/react";
+import { json } from "@remix-run/node";
+import { Outlet, useLoaderData } from "@remix-run/react";
 import type { BlogList } from "~/data/blogList.server";
 import { blogList } from "~/data/blogList.server";
 
-export const loader: LoaderFunction = async () => {
-  return blogList;
+export const loader: LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+
+  const currentPost = blogList.find(({ pathName }) => pathName === pathname);
+
+  return json(currentPost);
 };
 
 export const links: LinksFunction = () => {
@@ -13,10 +19,7 @@ export const links: LinksFunction = () => {
 };
 
 export default function BlogLayout() {
-  const { pathname } = useLocation();
-  const posts = useLoaderData<BlogList[]>();
-
-  const currentPost = posts.find(({ pathName }) => pathName === pathname);
+  const currentPost = useLoaderData<BlogList>();
 
   return (
     <>
