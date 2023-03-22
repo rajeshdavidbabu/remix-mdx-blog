@@ -1,19 +1,31 @@
 import { motion } from "framer-motion";
+import { NavLink } from "@remix-run/react";
+
+const animationVariants = {
+  rotate: {
+    rotate: 360,
+    transition: {
+      repeat: Infinity,
+      duration: 10,
+      ease: "linear",
+    },
+  },
+};
 
 export const Logo = () => {
   return (
-    <a href="/" className="inline-block">
+    <NavLink to="/" className="inline-block">
       <motion.img
         alt="Blog Logo"
         src="/assets/images/logo.webp"
         className="block w-[75px]"
         width="75"
         height="50"
-        animate={{ rotate: 360 }}
-        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        variants={animationVariants}
+        animate="rotate"
         whileHover={{ rotate: 180 }}
       />
-    </a>
+    </NavLink>
   );
 };
 
