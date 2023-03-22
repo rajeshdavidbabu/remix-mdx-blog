@@ -24,8 +24,19 @@ export const imageLoadAnimationProps = {
   },
 };
 
-export const mobileMenuAnimationProps = {
-  exit: { opacity: 0, y: -25, transition: { ease: "easeOut", duration: 0.5 } },
-  animate: { opacity: 1, y: 0, transition: { ease: "easeIn", duration: 0.5 } },
-  initial: { opacity: 0, y: -25 },
+export const mobileNavContainerVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+export const mobileNavListVariant = {
+  hidden: { y: -20, opacity: 0 },
+  show: { opacity: 1, y: 0 },
+};
+
+export const mobileNavExitProps = {
+  exit: { y: -20, opacity: 0 },
 };

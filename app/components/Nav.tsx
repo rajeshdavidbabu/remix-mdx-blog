@@ -3,24 +3,24 @@ import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { mobileMenuAnimationProps } from "~/data/animationConfig";
+import {
+  mobileNavContainerVariant,
+  mobileNavListVariant,
+  mobileNavExitProps,
+} from "~/data/animationConfig";
 
 const activeClassName = "selected navlink";
+const activeStyleCallback = ({ isActive }: { isActive: Boolean }) =>
+  isActive ? activeClassName : "navlink";
 
 const NavLinks = () => {
   return (
     <>
-      <NavLink
-        to="/"
-        className={({ isActive }) => (isActive ? activeClassName : "navlink")}
-      >
+      <NavLink to="/" className={activeStyleCallback}>
         Home
       </NavLink>
 
-      <NavLink
-        to="/blog"
-        className={({ isActive }) => (isActive ? activeClassName : "navlink")}
-      >
+      <NavLink to="/blog" className={activeStyleCallback}>
         Blog
       </NavLink>
     </>
@@ -51,10 +51,21 @@ const Nav = () => {
         {isOpen && (
           <motion.div
             key="nav-links"
-            {...mobileMenuAnimationProps}
+            variants={mobileNavContainerVariant}
+            initial="hidden"
+            animate="show"
             className="mt-4 basis-full md:hidden"
           >
-            <NavLinks />
+            <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
+              <NavLink to="/" className={activeStyleCallback}>
+                Home
+              </NavLink>
+            </motion.div>
+            <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
+              <NavLink to="/blog" className={activeStyleCallback}>
+                Blog
+              </NavLink>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
