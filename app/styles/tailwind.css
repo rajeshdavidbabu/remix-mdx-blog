@@ -66,7 +66,7 @@
 
 @layer components {
   .navlink {
-    @apply relative ml-5 block min-w-[70px] px-[5px] py-2.5 text-center text-inherit no-underline before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-full before:scale-x-0 before:bg-text-secondary before:transition-transform before:duration-[0.3s] before:ease-[ease] before:content-[''] hover:before:md:scale-x-100 [&:not(.selected)]:opacity-70 hover:[&:not(.selected)]:text-primary;
+    @apply relative block min-w-[70px] px-[5px] py-2.5 text-center text-inherit no-underline before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-full before:scale-x-0 before:bg-text-secondary before:transition-transform before:duration-[0.3s] before:ease-[ease] before:content-[''] md:ml-5 hover:before:md:scale-x-100 [&:not(.selected)]:opacity-70 hover:[&:not(.selected)]:text-primary;
   }
 
   .selected {

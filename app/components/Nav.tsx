@@ -2,6 +2,8 @@ import { NavLink } from "@remix-run/react";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { mobileMenuAnimationProps } from "~/data/animationConfig";
 
 const activeClassName = "selected navlink";
 
@@ -34,7 +36,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className="flex flex-[1] items-center justify-end">
+      <nav className="flex flex-[1] items-center justify-end overflow-hidden">
         <div className="hidden justify-end md:flex">
           <NavLinks />
         </div>
@@ -45,11 +47,17 @@ const Nav = () => {
           <button onClick={toggleNavbar}>{isOpen ? <X /> : <Menu />}</button>
         </div>
       </nav>
-      {isOpen && (
-        <div className="mt-4 basis-full md:hidden">
-          <NavLinks />
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="nav-links"
+            {...mobileMenuAnimationProps}
+            className="mt-4 basis-full md:hidden"
+          >
+            <NavLinks />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

@@ -14,3 +14,18 @@ export const containerVariants = {
     },
   },
 };
+
+export const imageLoadAnimationProps = {
+  initial: { scale: 1.5 },
+  animate: { scale: 1 },
+  transition: {
+    type: "spring",
+    duration: 1,
+  },
+};
+
+export const mobileMenuAnimationProps = {
+  exit: { opacity: 0, y: -25, transition: { ease: "easeOut", duration: 0.5 } },
+  animate: { opacity: 1, y: 0, transition: { ease: "easeIn", duration: 0.5 } },
+  initial: { opacity: 0, y: -25 },
+};

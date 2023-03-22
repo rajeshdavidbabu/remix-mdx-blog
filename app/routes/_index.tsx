@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
-import { textVariants, containerVariants } from "~/data/animationConfig";
+import {
+  textVariants,
+  containerVariants,
+  imageLoadAnimationProps,
+} from "~/data/animationConfig";
 
 export default function Index() {
   return (
@@ -30,14 +34,7 @@ export default function Index() {
       </motion.div>
 
       <div className="mx-[1em] my-0 text-center">
-        <motion.div
-          initial={{ scale: 1.5 }}
-          animate={{ scale: 1 }}
-          transition={{
-            type: "spring",
-            duration: 1,
-          }}
-        >
+        <motion.div {...imageLoadAnimationProps}>
           <picture className="block min-h-[250px]">
             <source
               srcSet="/assets/images/home-illustration.webp"
