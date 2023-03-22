@@ -1,11 +1,12 @@
 import styles from "highlight.js/styles/github-dark-dimmed.css";
 import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Outlet, useLoaderData } from "@remix-run/react";
+import { NavLink, Outlet, useLoaderData } from "@remix-run/react";
 import type { BlogList } from "~/data/blogList.server";
 import { blogList } from "~/data/blogList.server";
 import { motion } from "framer-motion";
 import { textVariants, containerVariants } from "~/data/animationConfig";
+import { ArrowLeft } from "lucide-react";
 
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
@@ -25,6 +26,12 @@ export default function BlogLayout() {
 
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible">
+      <div className="mx-auto flex w-full max-w-[47rem]">
+        <ArrowLeft />{" "}
+        <NavLink className="back-button ml-2 font-sans" to={"/blog"}>
+          Back
+        </NavLink>
+      </div>
       {currentPost ? (
         <header className="text-center">
           <motion.p
