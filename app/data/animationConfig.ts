@@ -40,3 +40,14 @@ export const mobileNavListVariant = {
 export const mobileNavExitProps = {
   exit: { y: -20, opacity: 0 },
 };
+
+export const logoRotationVariant = {
+  rotate: {
+    rotate: 360,
+    transition: {
+      repeat: Infinity,
+      duration: 20,
+      ease: "linear",
+    },
+  },
+};

@@ -1,16 +1,6 @@
 import { motion } from "framer-motion";
 import { NavLink } from "@remix-run/react";
-
-const animationVariants = {
-  rotate: {
-    rotate: 360,
-    transition: {
-      repeat: Infinity,
-      duration: 10,
-      ease: "linear",
-    },
-  },
-};
+import { logoRotationVariant } from "~/data/animationConfig";
 
 export const Logo = () => {
   return (
@@ -21,7 +11,7 @@ export const Logo = () => {
         className="block w-[75px]"
         width="75"
         height="50"
-        variants={animationVariants}
+        variants={logoRotationVariant}
         animate="rotate"
         whileHover={{ rotate: 180 }}
       />
