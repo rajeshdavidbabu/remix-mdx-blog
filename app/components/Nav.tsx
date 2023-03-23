@@ -1,6 +1,6 @@
-import { NavLink } from "@remix-run/react";
+import { NavLink, useLocation } from "@remix-run/react";
 import ThemeToggle from "./ThemeToggle";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -29,10 +29,15 @@ const NavLinks = () => {
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
