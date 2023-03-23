@@ -39,10 +39,9 @@ export const mobileNavListVariant = {
 
 export const mobileNavExitProps = {
   exit: {
-    y: -20,
     opacity: 0,
     height: 0,
-    transition: { duration: 0.2, ease: "easeIn" },
+    transition: { duration: 0.3, delay: 0.1 },
   },
 };
 
