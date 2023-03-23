@@ -52,7 +52,7 @@ const Nav = () => {
           <button onClick={toggleNavbar}>{isOpen ? <X /> : <Menu />}</button>
         </div>
       </nav>
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             key="nav-links"
@@ -61,28 +61,12 @@ const Nav = () => {
             animate="show"
             className="mt-4 basis-full md:hidden"
           >
-            <motion.div
-              variants={mobileNavListVariant}
-              exit={{
-                opacity: 0,
-                height: 0,
-                y: -25,
-                transition: { duration: 0.5, delay: 0.2 },
-              }}
-            >
+            <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
               <NavLink to="/" className={activeStyleCallback}>
                 Home
               </NavLink>
             </motion.div>
-            <motion.div
-              variants={mobileNavListVariant}
-              exit={{
-                opacity: 0,
-                height: 0,
-                y: -25,
-                transition: { duration: 0.5, delay: 0.4 },
-              }}
-            >
+            <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
               <NavLink to="/blog" className={activeStyleCallback}>
                 Blog
               </NavLink>

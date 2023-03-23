@@ -33,15 +33,16 @@ export const mobileNavContainerVariant = {
 };
 
 export const mobileNavListVariant = {
-  hidden: { y: -20, opacity: 0 },
-  show: { opacity: 1, y: 0 },
+  hidden: { y: -20, height: 0, opacity: 0 },
+  show: { opacity: 1, height: "auto", y: 0 },
 };
 
 export const mobileNavExitProps = {
   exit: {
     opacity: 0,
     height: 0,
-    transition: { duration: 0.3, delay: 0.1 },
+    y: -20,
+    transition: { duration: 0.2, ease: "easeIn" },
   },
 };
 
