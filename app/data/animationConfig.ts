@@ -41,7 +41,6 @@ export const mobileNavExitProps = {
   exit: {
     opacity: 0,
     height: 0,
-    y: -20,
     transition: { duration: 0.2, ease: "easeIn" },
   },
 };
