@@ -50,7 +50,7 @@ export const logoRotationVariant = {
     rotate: 360,
     transition: {
       repeat: Infinity,
-      duration: 20,
+      duration: 50,
       ease: "linear",
     },
   },

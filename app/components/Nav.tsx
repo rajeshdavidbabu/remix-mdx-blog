@@ -2,7 +2,7 @@ import { NavLink, useLocation } from "@remix-run/react";
 import ThemeToggle from "./ThemeToggle";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   mobileNavContainerVariant,
   mobileNavListVariant,
@@ -54,33 +54,25 @@ const Nav = () => {
       </nav>
       <AnimatePresence mode="wait">
         {isOpen && (
-          <MotionConfig reducedMotion="user">
-            <motion.div
-              layout="position"
-              key="nav-links"
-              variants={mobileNavContainerVariant}
-              initial="hidden"
-              animate="show"
-              className="mt-4 basis-full md:hidden"
-            >
-              <motion.div
-                variants={mobileNavListVariant}
-                {...mobileNavExitProps}
-              >
-                <NavLink to="/" className={activeStyleCallback}>
-                  Home
-                </NavLink>
-              </motion.div>
-              <motion.div
-                variants={mobileNavListVariant}
-                {...mobileNavExitProps}
-              >
-                <NavLink to="/blog" className={activeStyleCallback}>
-                  Blog
-                </NavLink>
-              </motion.div>
+          <motion.div
+            layout="position"
+            key="nav-links"
+            variants={mobileNavContainerVariant}
+            initial="hidden"
+            animate="show"
+            className="mt-4 basis-full md:hidden"
+          >
+            <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
+              <NavLink to="/" className={activeStyleCallback}>
+                Home
+              </NavLink>
             </motion.div>
-          </MotionConfig>
+            <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
+              <NavLink to="/blog" className={activeStyleCallback}>
+                Blog
+              </NavLink>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

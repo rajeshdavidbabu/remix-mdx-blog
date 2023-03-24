@@ -13,7 +13,7 @@ export const Logo = () => {
         height="50"
         variants={logoRotationVariant}
         animate="rotate"
-        whileHover={{ rotate: 180 }}
+        layout="position"
       />
     </NavLink>
   );
